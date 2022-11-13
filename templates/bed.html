@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Mediapp</title>
+
+
+</head>
+
+<body>
+
+  {% include "navbar.html" %}
+  <br><br><br><br><br><br>
+
+  <div >
+    <h1>Avail Beds</h1>
+    <form method="POST" action="{% url 'patient-book-bed'%}">
+        {% csrf_token %}
+        <label for="selct">Bed Number</label>
+        <select name="bed_num" id="selct">
+          {% for bed in beds %}
+          <option value={{ bed }}>{{ bed }}</option>
+      {% endfor %}
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  {% include "footer.html" %}
+</body>
+
+
+</html>

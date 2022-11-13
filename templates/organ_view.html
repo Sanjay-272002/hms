@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <br><br><br><br>
+    <h3 class="text-center">Organ Donation<h3>
+     
+        <p class="text-justify">Organ donation takes healthy organs and tissues from one person for transplantation into another. Experts say that the organs from one donor can save or help as many as 50 people. Organs you can donate include:
+
+            Internal organs: Kidneys, heart, liver, pancreas, intestines, lungs
+            Skin
+            Bone and bone marrow
+            Cornea
+            Most organ and tissue donations occur after the donor has died. But some organs and tissues can be donated while the donor is alive.
+            
+            People of all ages and background can be organ donors. If you are under age 18, your parent or guardian must give you permission to become a donor. If you are 18 or older you can show you want to be a donor by signing a donor card. You should also let your family know your wishes.</p>
+
+            <br><br><br>
+        <div class="d-flex flex-row">
+            <form action="/organ" method="post">
+                <label for="name">Name:</label>
+                <input type="text" name="namee" id="name">
+        
+                <label for="number">Phone:</label>
+               <input id="number" name="number"type="number">
+               <select name="organ" id="organ">
+                <option value="A+ve">I agree to the tems and condition and willing to donate</option>
+                <option value="B+ve">Not interested</option>
+             </select>
+               <label for="address">
+               Address:
+               </label>
+             <input type="text">
+           
+               <button type="submit">Submit</button>
+               </form>
+            </div>
+            <br><br>
+    {% include "footer.html" %}
+</body>
+</html>

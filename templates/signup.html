@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Mediapp</title>
+
+
+</head>
+
+<body>
+
+  {% include "navbar.html" %}
+  <br><br><br><br>
+
+  <div class="d-flex flex-column justify-content-center align-items-center" >
+    <h1 class="text-center">Welcome to SignUp Page</h1>
+    <br><br><br><br>
+    <div>
+    <form method="POST" action="{% url 'signup'%}">
+        {% csrf_token %}
+        <label for="selct">Who are you?</label>
+        <select name="domain" id="selct">
+            <!-- <option value="Admin">Admin</option> -->
+            <option value="Doctor">Doctor</option>
+            <option value="Patient">Patient</option>
+            <option value="Staff">Staff</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+  </div>
+  </div>
+  <br><br><br><br><br><br><br><br>
+  {% include "footer.html" %}
+
+  
+</body>
+
+
+</html>

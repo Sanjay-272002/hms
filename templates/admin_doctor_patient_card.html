@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+  crossorigin="anonymous"
+/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .title {
+      color: grey;
+      font-size: 18px;
+    }
+
+    button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    button:hover,
+    a:hover {
+      opacity: 0.7;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      padding: 10px;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    a {
+      color: white;
+    }
+    .news {
+      background-color:  red;
+  box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.5);
+  width: 350px;
+  height: 30px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 3px;
+  -webkit-user-select: none
+} 
+.full-width{
+    width: 100%;
+}
+.news span {
+  float: left;
+  color:  white;
+  padding: 6px;
+  position: relative;
+  top: 1%;
+  border-radius: 4px;
+  box-shadow: inset 0 -15px 30px rgba(0,0,0,0.4);
+  font: 16px 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  cursor: pointer
+}
+
+.news ul {
+  float: left;
+  padding-left: 20px;
+  animation: ticker 10s cubic-bezier(1, 0, .5, 0) infinite;
+  -webkit-user-select: none
+}
+
+.news ul li {line-height: 30px; list-style: none }
+
+.news ul li a {
+  color: white;
+  text-decoration: none;
+  font: 14px Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none
+}
+
+@keyframes ticker {
+	0%   {margin-top: 0}
+	25%  {margin-top: -30px}
+	50%  {margin-top: -60px}
+	75%  {margin-top: -90px}
+	100% {margin-top: 0}
+}
+
+.news ul:hover { animation-play-state: paused }
+.news span:hover+ul { animation-play-state: paused }
+  </style>
+</head>
+
+<body>
+
+  <div class="news red full-width mt-0">
+    <span>Notice</span>
+    <ul class="scrollLeft">
+      <li><a href="#">Free medical camp is being conducted by our hospital on 1st of December from 9AM at RAJALAKSHMI ENGINEERING COLLEGE.</a></li>
+      <li><a href="#">On the account of Diabetes day we are conducting an awareness program on how to prevent Diabetes on 14th November 2022 from 9AM at Express Avenue Mall</a> </li>
+      <li><a href="#">Free Vaccinations camp for COVID will take place on 18th of November 2022 at Government hospital, kanchipuram.</a> </li>
+      <!-- <li><a href="#">at RAJALAKSHMI ENGINEERING COLLEGE.</a></li> -->
+    </ul>
+  </div>
+<div class="d-flex f-row justify-content-center align-items-center mt-0">
+  <p class="lead">
+    <!-- <a class="btn btn-primary btn-lg mx-4" id="butt" href="/blood_view" role="button">BloodBank</a>
+   
+  
+  </p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg mx-4" id="butt" href="/med" role="button">MediCamp</a>
+   
+  
+  </p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg mx-4" id="butt" href="/organ" role="button">OrganDonation</a> -->
+   
+  
+  </p>
+</div>
+  <div class="d-flex justify-content-center align-items-center">
+  <div class="col-xl-4 col-md-6 col-sm-12 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-blue text-uppercase mb-1">
+                        ventilator availability</div>
+                        {% for b in oxygens %}
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{b.o_num}}</div>
+                        {% endfor %}
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-ambulance fa-2x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- <div class="col-xl-4 col-md-6 col-sm-12 mb-4">
+  <div class="card border-left-primary shadow h-100 py-2">
+      <div class="card-body">
+          <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                  <div class="text-xs font-weight-bold text-blue text-uppercase mb-1">
+                      Bed availability</div>
+                      {% for bed in beds %}
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">{{beds_available}}</div>
+                  {% endfor %}
+              
+                </div>
+              <div class="col-auto">
+                  <i class="fas fa-bed fa-2x text-gray-300"></i>
+              </div>
+          </div>
+      </div>
+  </div>
+</div> -->
+  <div><h3 class="font-weight-bold my-3">Beds availability</h3></div>
+  <div class="row d-flex flex-row justify-content-center ">
+      <!-- .bg-success.grid-box.my-2.mx-2  -->
+      {% comment %} <div class="bg-success grid-box my-2 mx-2 py-3 px-3"> {% endcomment %}
+      {% comment %} </div> {% endcomment %}
+
+    
+      {% for bed in beds %}
+      <div class="
+      
+      
+      {% if bed.occupied == True %}
+      bg-danger 
+      {% elif bed.occupied == False %}
+      bg-success
+      {% endif %}
+      
+      
+      d-flex justify-content-center align-items-center my-2 mx-2 py-3 px-3 text-white">{{ bed }}</div>
+  {% endfor %}
+    
+      
+  </div>
+  <br><br><br>
+  <div class="d-flex justify-content-center align-items-center">
+  <div class="panel panel-primary col-md-5" style="margin-left:2%;">
+    <div class="panel-heading" style="text-align:center;">
+      <h6 class="panel-title"> Doctors Detail</h6>
+    </div>
+    <table class="table table-hover" id="dev-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Mobile</th>
+          <th>Status</th>
+
+        </tr>
+      </thead>
+      {% for d in doctors %}
+      <tr>
+        <td> {{d.get_name}}</td>
+        <td>{{d.department}}</td>
+        <td>{{d.mobile}}</td>
+        {%if d.status%}
+        <td> <span class="label label-primary">Permanent</span></td>
+        {% else %}
+        <td> <span class="label label-success">On Hold</span></td>
+        {% endif %}
+
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+</body>
+
+</html>

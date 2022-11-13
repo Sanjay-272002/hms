@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>MediApp</title>
+
+</head>
+
+<body>
+  {% include "navbar.html" %}
+  {%block content%}
+
+  {%endblock content%}
+  {% include "footer.html" %}
+
+  <script>
+const locationBtn = document.getElementById("butt"),
+la=document.getElementById("lat"),
+lo=document.getElementById("long");
+locationBtn.addEventListener("click", ()=>{
+if(navigator.geolocation){//if browser supports the geolocation
+navigator.geolocation.getCurrentPosition(onsuccess,onerror);
+}
+else{
+alert("Your browser not supports the geolocation");
+}
+});
+
+function onsuccess(position){
+const{latitude, longitude} =position.coords;//getting latitude and longitude from coords
+
+ console.log(latitude);
+ console.log(longitude);
+}
+function onerror(error){
+infoTxt.innerHTML=error.message;
+infoTxt.classList.add("error");
+console.log("error")
+}
+  </script>
+</body>
+
+</html>

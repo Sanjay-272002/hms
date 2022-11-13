@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mrmedi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    {% include "navbar.html" %}
+    <br><br><br><br>
+<div>
+    <h1 class="text-center">Blood Donation</h1><br><br>
+    <p>Please fill the below form to donate  blood and all the fields must be filled and kindly do not give false information, we may verify your request by calling to the number given, if found false the requirement will be deleted from donormeetup.
+        </p></div>
+        <br><br><br><br>
+<div class="d-flex f-column  ">
+    <form action="/blood_view" method="post">
+     <label for="name">Name:</label>
+     <input type="text" name="namee" id="name">
+     <select name="blood" id="blood">
+        <option value="A+ve">A+ve</option>
+        <option value="B+ve">B+ve</option>
+        <option value="AB+ve">AB+ve</option>
+        <option value="O+ve">O+ve</option>
+        <option value="A-ve">A-ve</option>
+        <option value="B-ve">B-ve</option>
+        <option value="AB-ve">AB-ve</option>
+        <option value="O-ve">O-ve</option>
+        <option value="Other">Other</option>
+     </select>
+     <label for="number">Phone:</label>
+    <input id="number" name="number"type="number">
+
+    <label for="address">
+    Address:
+    </label>
+   <input type="text">
+
+    <button type="submit">Submit</button>
+    </form>
+
+    
+</div>
+<br><br><br><br><br>
+    {% include "footer.html" %}
+</body>
+</html>
